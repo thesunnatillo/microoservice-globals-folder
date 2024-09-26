@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthService {
+    rpc SignUp (SignUpDto) returns (SignUpResponse);
+    rpc SignIn (SignInDto) returns (SignInResponse);
+    rpc LogOut (LogOutDto) returns (LogOutResponse);
+    rpc GetMe (GetMeDto) returns (GetMeResponse);
+}
+
+
+message SignUpDto {
+    string fullname = 1;
+    string email = 2;
+    string password = 3;
+    string role = 4;
+}
+
+message SignInDto {
+    string email = 1;
+    string password = 2;
+}
+
+message LogOutDto {
+    string token = 1;
+}
+
+message GetMeDto {
+    string token = 1;
+}
+
+message SignUpResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+message SignInResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+message LogOutResponse {
+    string message = 1;
+}
+
+message GetMeResponse {
+    string fullname = 1;
+    string email = 2;
+    string password = 3;
+    string role = 4;
+}
