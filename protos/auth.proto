@@ -33,11 +33,13 @@ message GetMeDto {
 message SignUpResponse {
     string access_token = 1;
     string refresh_token = 2;
+    string message = 3;
 }
 
 message SignInResponse {
     string access_token = 1;
     string refresh_token = 2;
+    string message = 3;
 }
 
 message LogOutResponse {
@@ -49,4 +51,5 @@ message GetMeResponse {
     string email = 2;
     string password = 3;
     string role = 4;
+    string message = 5;
 }
