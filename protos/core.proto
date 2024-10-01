@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package core;
+
+service CourseService {
+    rpc Create (CreateCourseDto) returns (CreateCourseRes);
+    rpc Update (UpdateCourseDto) returns (UpdateCourseRes);
+    rpc Delete (DeleteCourseDto) returns (DeleteCourseRes);
+    rpc GetById (GetByIdDto) returns (GetByIdRes);
+    rpc GetAll (GetAllDto) returns (GetAllRes);
+}
+
+message CreateCourseDto {
+    string title = 1;
+    string desc = 2;
+    int32 price = 3;
+}
+
+message UpdateCourseDto {
+    int32 id = 1;
+    string title = 2;
+    string desc = 3;
+    int32 price = 4;
+}
+
+message DeleteCourseDto {
+    int32 id = 1;
+}
+
+message GetByIdDto {
+    int32 id = 1;
+}
+
+message GetAllDto {
+    
+}
+
+message CreateCourseRes {
+    int32 id = 1;
+    string title = 2;
+    string desc = 3;
+    int32 price = 4;
+    string message = 5;
+}
+
+message UpdateCourseRes {
+    string title = 1;
+    string desc = 2;
+    int32 price = 3;
+    string message = 4;
+}
+
+message DeleteCourseRes {
+    string message = 1;
+}
+
+message GetByIdRes {
+    int32 id = 1;
+    string title = 2;
+    string desc = 3;
+    int32 price = 4;
+}
+
+message GetAllRes {
+    repeated UpdateCourseDto courses = 1;
+}
