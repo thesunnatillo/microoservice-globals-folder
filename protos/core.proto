@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package core;
 
-service CourseService {
+service CoursesService {
     rpc Create (CreateCourseDto) returns (CreateCourseRes);
     rpc Update (UpdateCourseDto) returns (UpdateCourseRes);
     rpc Delete (DeleteCourseDto) returns (DeleteCourseRes);
